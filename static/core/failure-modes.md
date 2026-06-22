@@ -2,7 +2,7 @@
 
 Identify the highest-level failure first:
 
-- wrong study-type logic;
+- wrong contribution-type or study-type logic;
 - section does not perform its job;
 - physical problem or regime is undefined;
 - novelty is stated without a precise prior limitation;
@@ -15,6 +15,6 @@ Identify the highest-level failure first:
 
 Fix in this order:
 
-`study type -> section job -> paragraph logic -> claim/evidence/boundary -> terminology -> sentence`
+`contribution type -> study type -> section job -> paragraph logic -> claim/evidence/boundary -> terminology -> sentence`
 
 If a structural repair requires facts not present in the source, retain the defensible text and add an author query.

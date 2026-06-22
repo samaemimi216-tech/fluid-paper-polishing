@@ -13,5 +13,10 @@ Match each claim to evidence:
 | accurate | quantitative error against a suitable reference |
 | multiscale | tests spanning the relevant nondimensional regimes |
 | geometry-capable | boundary treatment plus curved/moving/complex-domain tests |
+| well-balanced/equilibrium-preserving | discrete balance analysis plus equilibrium residual or spurious-velocity test |
+| entropy-stable/entropic | stated entropy functional, admissibility conditions, and nonlinear stress test |
+| form-invariant/physics-constrained learning | invariant basis or constraint plus unseen-state and a-posteriori tests |
+| scalable/parallel-efficient | hardware, workload, communication strategy, strong/weak scaling, and efficiency definition |
+| generalizable data-driven model | leakage-safe split and tests across unseen regime, geometry, or realization |
 
 Also check spatial, temporal, velocity/angular/frequency, and statistical convergence separately when they coexist.

@@ -9,6 +9,23 @@ always_load:
   - static/core/output-format.md
 
 axes:
+  contribution_type:
+    detect: >
+      Identify the paper's main argumentative product. Choose method-development
+      when the central claim concerns a new solver, model, closure, boundary
+      treatment, or implementation; physical-investigation when the main result
+      is a flow or transport insight; comparative-assessment when the paper
+      evaluates methods under matched conditions; review-synthesis for literature
+      synthesis; and data-driven-modeling when learning or data inference is a
+      central methodological component.
+    default: method-development
+    multi: false
+    values:
+      method-development: static/contribution-types/method-development.md
+      physical-investigation: static/contribution-types/physical-investigation.md
+      comparative-assessment: static/contribution-types/comparative-assessment.md
+      review-synthesis: static/contribution-types/review-synthesis.md
+      data-driven-modeling: static/contribution-types/data-driven-modeling.md
   study_type:
     detect: >
       Use the user's description first. Choose numerical for CFD, kinetic,
@@ -28,13 +45,17 @@ axes:
       Infer the rhetorical section from its heading and content. Select multiple
       values for a full manuscript or a combined section. Treat governing
       equations, numerical algorithms, and experimental setup as
-      formulation-methods.
+      formulation-methods. Use results-discussion only when the manuscript
+      intentionally combines reporting and interpretation.
     multi: true
     values:
-      title-abstract: static/sections/title-abstract.md
+      title: static/sections/title.md
+      abstract: static/sections/abstract.md
       introduction: static/sections/introduction.md
       formulation-methods: static/sections/formulation-methods.md
       verification-validation: static/sections/verification-validation.md
+      results: static/sections/results.md
+      discussion: static/sections/discussion.md
       results-discussion: static/sections/results-discussion.md
       conclusion: static/sections/conclusion.md
       captions: static/sections/captions.md
@@ -49,22 +70,30 @@ axes:
       zh-to-en: static/language/zh-to-en.md
   journal:
     detect: >
-      Map Journal of Computational Physics to jcp, International Journal of Heat
-      and Mass Transfer to ijhmt, and Physical Review E to pre. Use generic when
-      no modeled target is named.
+      Map Journal of Computational Physics to jcp, Journal of Fluid Mechanics to
+      jfm, Physics of Fluids to pof, Physical Review Fluids to prf,
+      International Journal of Heat and Mass Transfer to ijhmt, Physical Review E
+      to pre, and Progress in Energy and Combustion Science to pecs. Use generic
+      when no modeled target is named.
     default: generic
     multi: false
     values:
       jcp: static/journals/jcp.md
+      jfm: static/journals/jfm.md
+      pof: static/journals/pof.md
+      prf: static/journals/prf.md
       ijhmt: static/journals/ijhmt.md
       pre: static/journals/pre.md
+      pecs: static/journals/pecs.md
       generic: static/journals/generic.md
   physics:
     detect: >
       Choose the dominant physics. Use kinetic-rarefied for Boltzmann, UGKS,
       DUGKS, DSMC, LBM, or rarefied flow; heat-radiation for thermal, phonon,
-      radiative, or conjugate transport; multiphase-reacting for dispersed,
-      interfacial, combustion, or reacting flows; otherwise general-fluids.
+      radiative, or conjugate transport; multiphase-reacting for dispersed or
+      reacting flows; interfacial-porous for interfaces, phase change, porous
+      media, shale, or capillarity; turbulence-data-driven for DNS/RANS/LES,
+      closures, or machine learning; otherwise general-fluids.
     default: general-fluids
     multi: true
     values:
@@ -72,6 +101,8 @@ axes:
       kinetic-rarefied: references/kinetic-and-rarefied.md
       heat-radiation: references/heat-and-radiation.md
       multiphase-reacting: references/multiphase-and-reacting.md
+      interfacial-porous: references/interfacial-and-porous.md
+      turbulence-data-driven: references/turbulence-and-data-driven.md
 
 references:
   on_demand:
@@ -79,5 +110,13 @@ references:
       path: references/fluid-language-bank.md
     - condition: the manuscript proposes or evaluates a numerical method
       path: references/numerical-evidence-checklist.md
+    - condition: the abstract, title, or paragraph architecture needs reconstruction
+      path: references/corpus-move-patterns.md
+    - condition: the draft uses strong claim verbs or may overstate evidence
+      path: references/claim-evidence-calibration.md
+    - condition: two or more methods are compared
+      path: references/comparative-method-writing.md
+    - condition: a review article needs taxonomy, synthesis, gaps, or outlook structure
+      path: references/review-synthesis-patterns.md
     - condition: the user asks how this style was derived from the local literature
       path: references/corpus-derived-patterns.md

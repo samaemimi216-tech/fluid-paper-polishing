@@ -1,6 +1,6 @@
 ---
 name: fluid-paper-polishing
-description: Polish, restructure, or translate fluid-mechanics, computational-fluid-dynamics, kinetic-theory, multiphase-flow, heat-and-mass-transfer, and radiative-transport manuscripts into publication-quality English. Use for titles, abstracts, introductions, governing equations, numerical or experimental methods, verification and validation, results, discussions, conclusions, captions, and Chinese-to-English revision, especially when claims must follow field conventions for flow regimes, nondimensional parameters, conservation, accuracy, stability, benchmark agreement, uncertainty, and physical interpretation.
+description: Polish, restructure, or translate fluid-mechanics, computational-fluid-dynamics, kinetic-theory, turbulence, multiphase-flow, porous-media, heat-and-mass-transfer, radiative-transport, and data-driven fluid manuscripts into publication-quality English. Use for titles, abstracts, introductions, governing equations, numerical or experimental methods, verification and validation, results, discussions, conclusions, captions, comparative method studies, review articles, and Chinese-to-English revision, especially when claims must follow field conventions for regimes, nondimensional parameters, conservation, accuracy, stability, benchmark agreement, scaling, uncertainty, and physical interpretation.
 ---
 
 # Fluid Paper Polishing
@@ -17,18 +17,18 @@ Do not polish from the router alone. Update fragments rather than expanding the 
 1. Read [manifest.yaml](manifest.yaml).
 2. Read every file under `always_load`.
 3. Detect and state one short routing line:
-   `study_type | section | language | journal | physics`.
+   `contribution_type | study_type | section | language | journal | physics`.
 4. Load only the matching axis fragments. If the user supplies a standalone paragraph, omit `section` only when its function cannot be inferred.
 5. Load an on-demand reference only when its condition in the manifest applies.
 
-Default to `numerical`, `generic`, and `general-fluids` when evidence is insufficient. Do not ask about an axis unless the choice would materially change the revision.
+Default to `method-development`, `numerical`, `generic`, and `general-fluids` when evidence is insufficient. Do not ask about an axis unless the choice would materially change the revision.
 
 ## Revise in scientific order
 
 Apply the loaded guidance in this order:
 
 1. Preserve the scientific meaning, symbols, data, citations, and contribution boundary.
-2. Diagnose `study type -> section job -> paragraph logic -> claim/evidence/boundary -> sentence`.
+2. Diagnose `contribution type -> study type -> section job -> paragraph logic -> claim/evidence/boundary -> sentence`.
 3. Repair the section's rhetorical job and paragraph logic.
 4. Check claim-evidence alignment and fluid-mechanics validity.
 5. Lock terminology, notation, tense, and comparison baselines.
