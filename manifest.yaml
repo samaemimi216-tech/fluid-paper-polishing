@@ -1,0 +1,83 @@
+name: fluid-paper-polishing
+
+always_load:
+  - static/core/reader-workflow.md
+  - static/core/terminology-ledger.md
+  - static/core/stance.md
+  - static/core/failure-modes.md
+  - static/core/fluid-integrity.md
+  - static/core/output-format.md
+
+axes:
+  study_type:
+    detect: >
+      Use the user's description first. Choose numerical for CFD, kinetic,
+      discretization, solver, or simulation papers; experimental for measured
+      facility or laboratory studies; theoretical for derivation or analysis
+      without a primary numerical/experimental contribution; review for
+      literature synthesis.
+    default: numerical
+    multi: false
+    values:
+      numerical: static/study-types/numerical.md
+      experimental: static/study-types/experimental.md
+      theoretical: static/study-types/theoretical.md
+      review: static/study-types/review.md
+  section:
+    detect: >
+      Infer the rhetorical section from its heading and content. Select multiple
+      values for a full manuscript or a combined section. Treat governing
+      equations, numerical algorithms, and experimental setup as
+      formulation-methods.
+    multi: true
+    values:
+      title-abstract: static/sections/title-abstract.md
+      introduction: static/sections/introduction.md
+      formulation-methods: static/sections/formulation-methods.md
+      verification-validation: static/sections/verification-validation.md
+      results-discussion: static/sections/results-discussion.md
+      conclusion: static/sections/conclusion.md
+      captions: static/sections/captions.md
+  language:
+    detect: >
+      Use zh-to-en for Chinese source text or strongly Chinese-influenced English;
+      otherwise use en.
+    default: en
+    multi: false
+    values:
+      en: static/language/en.md
+      zh-to-en: static/language/zh-to-en.md
+  journal:
+    detect: >
+      Map Journal of Computational Physics to jcp, International Journal of Heat
+      and Mass Transfer to ijhmt, and Physical Review E to pre. Use generic when
+      no modeled target is named.
+    default: generic
+    multi: false
+    values:
+      jcp: static/journals/jcp.md
+      ijhmt: static/journals/ijhmt.md
+      pre: static/journals/pre.md
+      generic: static/journals/generic.md
+  physics:
+    detect: >
+      Choose the dominant physics. Use kinetic-rarefied for Boltzmann, UGKS,
+      DUGKS, DSMC, LBM, or rarefied flow; heat-radiation for thermal, phonon,
+      radiative, or conjugate transport; multiphase-reacting for dispersed,
+      interfacial, combustion, or reacting flows; otherwise general-fluids.
+    default: general-fluids
+    multi: true
+    values:
+      general-fluids: references/fluid-conventions.md
+      kinetic-rarefied: references/kinetic-and-rarefied.md
+      heat-radiation: references/heat-and-radiation.md
+      multiphase-reacting: references/multiphase-and-reacting.md
+
+references:
+  on_demand:
+    - condition: terminology, collocations, or claim verbs need field-specific guidance
+      path: references/fluid-language-bank.md
+    - condition: the manuscript proposes or evaluates a numerical method
+      path: references/numerical-evidence-checklist.md
+    - condition: the user asks how this style was derived from the local literature
+      path: references/corpus-derived-patterns.md

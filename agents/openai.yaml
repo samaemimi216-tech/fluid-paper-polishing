@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fluid Paper Polishing"
+  short_description: "Polish fluid mechanics and heat-transfer papers"
+  default_prompt: "Use $fluid-paper-polishing to polish this fluid-mechanics manuscript section with field-appropriate logic and terminology."
