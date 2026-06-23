@@ -1,6 +1,8 @@
 # Corpus-derived patterns
 
-This skill was calibrated against 69 local PDF artifacts: the original 29-paper kinetic/heat-transfer collection plus 40 newly added top-journal papers.
+This skill was calibrated against 69 local PDF artifacts and the accompanying
+`fluid_top40_2016_2026.csv`: the original kinetic/heat-transfer collection plus
+40 top-journal records selected from 2016-2026.
 
 ## Corpus coverage
 
@@ -10,6 +12,12 @@ This skill was calibrated against 69 local PDF artifacts: the original 29-paper 
 - *International Journal of Heat and Mass Transfer*: multiscale reviews, thermal LBM/HPC, radiative transfer, porous transport, interfacial area, and phase change.
 - *Progress in Energy and Combustion Science*: critical reviews of multiphase/phase-change LBM, pore-scale transport, and combustion machine learning.
 
+Keyword signals from the local scan are concentrated in kinetic methods, thermal
+transport, lattice Boltzmann methods, UGKS/DUGKS, multiphase flow, radiative
+transfer, porous media, turbulence, closures, validation, and finite-volume or
+immersed-boundary implementations. Treat this as scope calibration, not as a
+claim that these topics are exhaustive for fluid mechanics.
+
 ## Recurring argument patterns
 
 ### Method development
@@ -17,7 +25,9 @@ This skill was calibrated against 69 local PDF artifacts: the original 29-paper 
 1. identify a discrete or modeling defect;
 2. locate its algorithmic cause;
 3. introduce one operative correction;
-4. state the property expected from that correction;
+4. state the property expected from that correction, such as conservation,
+   positivity, asymptotic preservation, equilibrium preservation, high-order
+   accuracy, or multiscale coupling;
 5. verify the property separately from benchmark accuracy;
 6. report the accuracy, stability, cost, or regime trade-off.
 
@@ -46,5 +56,41 @@ This skill was calibrated against 69 local PDF artifacts: the original 29-paper 
 4. synthesize applications and evidence;
 5. identify causes of persistent limitations;
 6. derive a prioritized outlook.
+
+## Corpus-informed section moves
+
+### Abstracts
+
+The strongest abstracts in this corpus do not begin with broad praise for a
+method family. They quickly name a technical limitation, then state the operative
+change and the property it enables. For physical studies, they name the system,
+parameter range, and dominant trend before offering a mechanism.
+
+### Introductions
+
+Effective introductions group prior work by limitation source rather than by
+chronology. Common limitation groups include continuum breakdown, mesh or
+geometry constraints, source-term stiffness, force imbalance, high-dimensional
+velocity or frequency spaces, data scarcity, and cost at coupled scales.
+
+### Methods
+
+Method sections distinguish continuous physics from the discrete algorithm. In
+UGKS/DUGKS/LBM-style papers, the local corpus repeatedly separates the kinetic
+model, distribution functions, reconstruction or flux evaluation, collision or
+source update, boundary treatment, and macroscopic recovery.
+
+### Results
+
+Results sections usually pair property tests with benchmark tests. A
+property-preserving claim needs a property-specific diagnostic before or beside a
+benchmark profile. A performance claim needs matched conditions and a named cost
+measure.
+
+### Discussions and conclusions
+
+Stronger discussions avoid unconditional superiority. They state where the method
+or interpretation is preferable, where it becomes expensive or fragile, and which
+regime has not been tested.
 
 Use these as rhetorical moves, not reusable sentences. Do not copy wording from the corpus or treat frequency as proof of scientific correctness.

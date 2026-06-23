@@ -6,6 +6,7 @@ always_load:
   - static/core/stance.md
   - static/core/failure-modes.md
   - static/core/fluid-integrity.md
+  - static/core/writing-quality.md
   - static/core/output-format.md
 
 axes:
@@ -112,11 +113,15 @@ references:
       path: references/numerical-evidence-checklist.md
     - condition: the abstract, title, or paragraph architecture needs reconstruction
       path: references/corpus-move-patterns.md
+    - condition: a full section or full manuscript needs section-by-section architecture before rewriting
+      path: references/section-architecture.md
+    - condition: the user asks for a corpus-informed rewrite or wants rules derived from the provided PDFs and CSV
+      path: references/corpus-derived-patterns.md
     - condition: the draft uses strong claim verbs or may overstate evidence
       path: references/claim-evidence-calibration.md
     - condition: two or more methods are compared
       path: references/comparative-method-writing.md
     - condition: a review article needs taxonomy, synthesis, gaps, or outlook structure
       path: references/review-synthesis-patterns.md
-    - condition: the user asks how this style was derived from the local literature
-      path: references/corpus-derived-patterns.md
+    - condition: the prose sounds generic, AI-like, over-polished, or rhythmically flat
+      path: references/fluid-writing-quality-check.md

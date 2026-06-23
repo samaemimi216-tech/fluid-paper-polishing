@@ -13,3 +13,9 @@ Present material in this order when applicable:
 - For data-driven methods, define data generation, preprocessing, split strategy, architecture or basis, loss, constraints, and inference coupling.
 - Name convergence criteria and reproducibility-critical parameters.
 - Describe algorithm steps in causal order, not equation-number order.
+- For UGKS/DUGKS/LBM-style papers, keep the kinetic equation, distribution
+  functions, equilibrium or collision model, flux/reconstruction, source terms,
+  boundary treatment, and macroscopic recovery conceptually distinct.
+- For coupled multiphysics papers, state where coupling happens: governing
+  equations, interface flux, collision/source update, boundary condition, or
+  post-processing.

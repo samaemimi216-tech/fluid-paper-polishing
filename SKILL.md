@@ -5,7 +5,9 @@ description: Polish, restructure, or translate fluid-mechanics, computational-fl
 
 # Fluid Paper Polishing
 
-This skill follows a static/dynamic split:
+This skill follows a static/dynamic split modeled after `nature-polishing`,
+with ARS-style phase discipline for structure, evidence mapping, drafting, and
+self-review:
 
 - `static/` stores reusable core rules and narrowly scoped fragments.
 - this router plus `manifest.yaml` detects the request and loads only the necessary fragments.
@@ -20,6 +22,9 @@ Do not polish from the router alone. Update fragments rather than expanding the 
    `contribution_type | study_type | section | language | journal | physics`.
 4. Load only the matching axis fragments. If the user supplies a standalone paragraph, omit `section` only when its function cannot be inferred.
 5. Load an on-demand reference only when its condition in the manifest applies.
+6. For full-section or full-manuscript work, build a compact section plan before
+   rewriting: section purpose, core claim, required evidence, boundary, and
+   unresolved author queries.
 
 Default to `method-development`, `numerical`, `generic`, and `general-fluids` when evidence is insufficient. Do not ask about an axis unless the choice would materially change the revision.
 
@@ -32,7 +37,9 @@ Apply the loaded guidance in this order:
 3. Repair the section's rhetorical job and paragraph logic.
 4. Check claim-evidence alignment and fluid-mechanics validity.
 5. Lock terminology, notation, tense, and comparison baselines.
-6. Improve sentence economy and journal fit.
+6. Run a writing-quality pass for AI-typical filler, promotional adjectives,
+   uniform rhythm, throat-clearing, and punctuation tics.
+7. Improve sentence economy and journal fit.
 
 Never invent equations, parameter values, boundary conditions, validation cases, uncertainty estimates, mechanisms, citations, or novelty. Flag missing scientific support instead of hiding it with fluent prose.
 
@@ -46,7 +53,13 @@ Never invent equations, parameter values, boundary conditions, validation cases,
 
 ## Deliver
 
-Follow the loaded output format. Return polished prose outside code blocks. Keep LaTeX notation intact. If support is missing, use an explicit author query such as `[Author query: report the grid-refinement criterion.]`.
+Follow the loaded output format. Return polished prose outside code blocks. Keep
+LaTeX notation intact. If support is missing, use an explicit author query such
+as `[Author query: report the grid-refinement criterion.]`.
+
+For large rewrites, do not silently transform the scientific argument. Provide a
+brief structural diagnosis and a claim-evidence map so the author can see what
+was strengthened, hedged, or left unresolved.
 
 ## Why this split
 

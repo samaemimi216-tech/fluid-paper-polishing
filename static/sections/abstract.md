@@ -15,3 +15,7 @@ Default physical-paper order:
 - Distinguish `recovers`, `preserves`, `agrees`, `predicts`, and `reveals`.
 - Avoid benchmark inventories; name only tests essential to the claim.
 - Do not end with `has promising potential`; state demonstrated use or a bounded implication.
+- For method abstracts, separate the proven/discrete property from empirical
+  benchmark performance.
+- For data-driven abstracts, name the training data, held-out test, physical
+  constraint, and deployment or solver-coupling boundary when available.

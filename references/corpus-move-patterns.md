@@ -29,3 +29,28 @@ Map each paragraph to one dominant job:
 5. present contribution and evidence plan.
 
 Do not preserve a paragraph that mixes literature catalogue, derivation, contribution, and result preview merely because its sentences are grammatical.
+
+## Full-section reconstruction
+
+When a section is structurally weak, use the smallest reconstruction that solves
+the problem:
+
+- Reorder paragraphs before rewriting sentences.
+- Split paragraphs that mix background, gap, method, result, and interpretation.
+- Add author queries for missing evidence instead of inventing tests or values.
+- Preserve citation placement unless the source claim clearly moves with a
+  sentence during restructuring.
+
+## Claim-evidence map
+
+For major rewrites, create a compact internal map before drafting:
+
+| Claim type | Required support |
+|---|---|
+| Accuracy | reference solution, norm, grid/time-step/space resolution, error value or order |
+| Stability | tested range, time horizon, failure criterion, comparison if available |
+| Conservation | conserved quantity, residual/tolerance, conditions |
+| Positivity/boundedness | variable, theorem or diagnostic, difficult case |
+| Asymptotic preservation | limiting equation/regime, parameter sweep, recovery evidence |
+| Efficiency | hardware, implementation, problem size, wall time/memory/iterations/samples |
+| Generalization | held-out geometry/regime/data split and failure cases |
